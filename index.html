@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--***************************************************************************************************-->
+    <!--导航栏:语义化标签用nav-->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">🌌Galaxy<span>Rain</span></a>
+        <div class="nav-links">
+            <a href="index.html" class="active">主页</a>
+            <a href="about.html">了解更多</a>
+            <a href="contact.html">联系我们</a>
+        </div>
+    </nav>
+<!--***************************************************************************************************-->
+    <!--Hero区域：独立区域的语义化标签用section-->
+    <section class="hero">
+        <div class="hero-badge">✴️银河也会下雨吗</div>
+        <h1>Welcome to<br>
+            <span class="gradient-text">GalaxyRain</span>
+        </h1>
+        <p class="hero-sub">Eleven带你探索无限可能的宇宙</p>
+        <div class="hero-buttons">
+            <!--btn btn_01和btn btn_02中 btn代表共有的样式-->
+            <a href="about.html" class="btn btn_01">了解更多👉</a>
+            <a href="contact.html" class="btn btn_02">联系我们📞</a>
+        </div>
+        <!--这里可以插入图片-->
+        <div class="hero-image"><!--分析HTML结构：外层是 hero-image 内层是轮播图的容器-->
+            <!--轮播图-->
+            <div class="carousel-container"> <!--CSS中设了relative定位-->
+                <!--class里有 active，所以页面加载时默认显示这张NASA1.jpg-->
+                <img src="Images/NASA1.jpg" class="carousel-img active" alt="Deep Field">
+                <!--另外两张图  没有active  初始opacity为0不可见-->
+                <img src="Images/NASA2.jpg" class="carousel-img" alt="Carina Nebula">
+                <img src="Images/WallPaper.jpg" class="carousel-img" alt="Galaxy M94">
+                <!--按钮-->
+                <button class="carousel-btn prev" id="prevBtn">❮</button>
+                <button class="carousel-btn next" id="nextBtn">❯</button>
+            </div>
+        </div>
+    </section>
+<!--***************************************************************************************************-->
+    <!--特性卡片区域-->
+    <!--按以下格式（标签名一样）来可以统一修改样式-->
+    <section class="section">
+        <h2 class="section-title fade-in">What Is The Best Chat Site?</h2>
+        <p class="section-sub fade-in">GalaxyRain_Go!</p>
+        <div class="card-grid">
+        <div class="card fade-in">
+            <div class="card-icon">⚡</div>
+            <h3>Faster</h3>
+            <p>每一条消息都如星光般瞬间抵达</p>
+        </div>
+        <div class="card fade-in">
+            <div class="card-icon">🚀</div>
+            <h3>More Effective</h3>
+            <p>沟通效率 星际水准</p>
+        </div>
+        <div class="card fade-in">
+            <div class="card-icon">🛡️</div>
+            <h3>Stronger</h3>
+            <p>坚不可摧的安全防护 守护每一次隐私</p>
+        </div>
+    </div>
+    </section>
+<!--***************************************************************************************************-->
+    <!--管理员表格-->
+    <section class="section">
+        <h2 class="section-title">银河护卫队</h2>
+        <p class="section-sub">我们的成员名单</p>
+        <table class="styled-table">
+            <tr>
+                <th>管理者</th>
+                <th>联系方式</th>
+                <th>状态</th>
+            </tr>
+            <tr>
+                <td>ElevenNie</td>
+                <td>17775569428</td>
+                <td><span class="badge badge-green">在线</span></td>
+            </tr>
+            <tr>
+                <td>韦壬巳</td>
+                <td>13489572131</td>
+                <td><span class="badge badge-green">在线</span></td>
+            </tr>
+            <tr>
+                <td>Amanda</td>
+                <td>18828244774</td>
+                <td><span class="badge badge-yellow">忙碌</span></td>
+            </tr>
+            <tr>
+                <td>香菜queen</td>
+                <td>18382372664</td>
+                <td><span class="badge badge-yellow">忙碌</span></td>
+            </tr>
+        </table>
+    </section>
+    <footer class="footer">
+        <p>© 2026<span>GalaxyRain</span>· 用 ❤️ 和代码构建 · Follow Your Inner Voice</p>
+    </footer>
+    <!---------------------------------------------------------------------------------------->
+    <!--js-->
+    <script src="script.js"></script>
+</body>
+</html>

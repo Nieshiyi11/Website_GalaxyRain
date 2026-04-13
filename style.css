@@ -1,0 +1,427 @@
+        /*基础重置*/
+*{ /*通配符选择器 表示选中页面中的所有元素*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #05050f;
+    color: #e2e8f0;
+    font-family: Arial,sans-serif;
+    padding-top: 70px;
+}
+/*******************************************************************/
+/*导航栏*/
+.nav{
+    position: fixed;   /*导航栏固定在顶部*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;    /*控制水平方向*/
+    align-items: center;      /*控制垂直方向*/
+    padding: 0 40px;  /*内容和边框之间的距离*/
+    background-color: rgba(5,5,15,0.95);
+    border-bottom: 1px solid rgba(167,139,250,0.25);
+}
+.nav-logo{
+    font-size: 20px;
+    font-weight: 700;
+    color: #a78bfa;  /*hex：不能控制颜色透明度 rgba可以*/
+    text-decoration: none;
+}
+.nav-logo span{
+    color: #f472b6;
+}
+.nav-links a{
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: color 0.3s,background-color 0.3s;
+}
+.nav-links a:hover{
+    color: #e2e8f0;
+    background-color: ragba(167,139,250,0.15);
+}
+.nav-links a.active{
+    color: #a78bfa;
+    background-color:rgba(167,139,250,0.15);
+}
+/*******************************************************************/
+/*横幅hero区域*/
+ .hero{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;/*布局格式*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+ }
+ .hero-badge{
+    padding: 6px 18px;
+    background-color: rgba(167,139,250,0.1);/*r红 g绿 b蓝 a透明度*/
+    /*1px:边框的厚度 1像素*/
+    /*solid:边框样式 实线*/
+    /*rgba:边框颜色*/
+    border: 1px solid rgba(167,139,250,0.25);
+    border-radius: 20px;
+    font-size: 13px;
+    color: #a78bfa;
+    letter-spacing: 2px;
+    margin-bottom: 28px;/*盒子模型要素之一：控制元素与下方元素之间的距离*/
+ }
+.hero h1{
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.1;  /*行高 控制每行文字之间的距离，1.1是倍数 意思是行高是字体大小的1.1倍*/
+    margin-bottom: 20px;
+}
+.gradient-text{
+    /*渐变背景*/
+    background: linear-gradient(135deg,#a78bfa,#f472b6);
+    -webkit-background-clip: text;
+    /*背景裁剪成文字形状*/
+    -webkit-text-fill-color: transparent;/*把文字本身变成透明 可以看到渐变背景*/
+    background-clip: text;
+}
+.hero-sub{
+    font-size: 18px;
+    color: #94a3b8;
+    margin-bottom: 36px;
+    max-width: 500px;
+}
+.hero-buttons{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 60px;
+}
+/*******************************************************************/
+/*主页面按钮样式*/
+.btn{    /*btn共有的样式*/
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    /*当transform或box-shadow发生变化时 用0.2秒的时间平滑过渡 而不是瞬间改变*/
+    transition: transform 0.2s,box-shadow 0.2s;
+}
+.btn_01{
+    background:linear-gradient(135deg,#a78bfa,#7c3aed);
+    color: white;
+    /*给元素加阴影效果 让按钮看起来有浮起来的感觉*/
+    /*水平 垂直 模糊度 颜色*/
+    box-shadow: 0 4px 20px rgba(167,139,250,0.1);
+}
+.btn_01:hover{ /*hover:代表 鼠标悬停*/
+    transform: translateY(-2px);/*按钮向上移动2px*/
+    box-shadow: 0 8px 30px rgba(167,139,250,0.4);
+}
+.btn_02{
+    background:linear-gradient(135deg,#a78bfa,#7c3aed);
+    color: white;
+    border:1px solid rgba(167,139,250,0.1);
+}
+.btn_02:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(167,139,250,0.4);
+}
+/*******************************************************************/
+/*图片*/
+.hero-image img{
+    width: 90vw;
+    max-width: 900px;
+    height:450px;
+    /*让图片填满容器,多余的部分裁掉,不会变形.就像手机壁纸一样,图片永远填满屏幕*/
+    object-fit:cover;
+    border-radius: 16px;
+    border:1px solid rgba(167,139,250,0.25);
+}
+/*******************************************************************/
+/*卡片区域*/
+.section{
+    padding: 100px 40px;
+    max-width: 1100px;  /*最大宽度限制*/
+    margin: 0 auto;  /*上下边距为0 左右边距自动均分 这样能使内容居中显示*/
+}
+.section-title{
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.section-sub{
+    color: #94a3b8;
+    margin-bottom: 48px;
+    font-size: 16px;
+}
+.card-grid{
+    display: flex;
+    gap:24px;
+}
+.card{
+    /*flex:1 是flexbox里的属性 意思是让子元素平均分配父元素的剩余空间*/
+    flex: 1;
+    background-color: #0d0d1f;
+    border: 1px solid rgba(167,139,250,0.25);
+    border-radius: 16px;
+    padding: 28px;  /*内容到边框的距离*/
+    transition: transform 0.3s,box-shadow 0.3s,border-color 0.3s;
+}
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow: 0 12px 40px rgba(167,139,250,0.15);
+    border-color: rgba(167,139,250,0.5);
+}
+.card-icon{
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+.card h3{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;  /*元素到下方元素的距离*/
+}
+.card p{
+    color: #94a3b8;
+    font-size:14px;
+    line-height: 1.6;  /*行高*/
+}
+/*******************************************************************/
+/*管理人员表格区域*/
+.styled-table{
+    width:100%;/*表格宽度占满父容器 撑满整个section区域*/
+    border-collapse: collapse;/*合并边框*/
+    font-size: 15px;
+}
+.styled-table th{
+    background-color: rgba(167,139,250,0.15);
+    color: #a78bfa;
+    padding: 14px 20px;
+    text-align: left;/*文字对齐方式 让文字靠左对齐*/
+    font-weight: 600;
+    border-bottom: 1px solid rgba(167,139,250,0.25);
+}
+.styled-table td{
+    padding: 14px 20px;
+    border-bottom: rgba(255,255,255,0.05);
+}
+.styled-table tr:hover td{
+    background-color: rgba(167,139,250,0.05);
+}
+/*状态显示样式*/
+.badge{
+    display: inline-block;/**/
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.badge-green{
+    background-color: rgba(52,211,153,0.15);
+    color: #34d399;
+}
+.badge-yellow{
+    background-color: rgba(251,191,36,0.15);
+    color:#fbbf24;
+}
+/*******************************************************************/
+/*页脚*/
+.footer{
+    text-align: center;
+    padding: 40px 20px;
+    border-top:1px solid rgba(167,139,250,0.25) ;
+    color: #94a3b8;
+    font-size: 14px;
+    margin-top: 40px;  /*控制元素和上方元素的距离*/ 
+    /*让页脚和上面的表格之间留一点空隙*/
+}
+.footer span{
+    color: #f472b6;
+}
+/*******************************************************************/
+/*******************************************************************/
+/*关于页面*/
+.about-hero{
+    display: flex;/*开启Flexbox:子元素并排*/
+    gap:60px;/*左右两块之间的间距60px*/
+    align-items: center;/*垂直方向居中对齐*/
+}
+.hero-badge span{
+    text-align: center;
+}
+.about-text{
+    flex:1;  /*左边文字占一份空间*/
+}
+.about-image{
+    flex:1;  /*右边文字占一份空间*/
+}
+/*两者各占50%，平分页面*/
+.about-image img{
+    width: 100%;  /*图片撑满父容器宽度*/
+    border-radius: 16px; /*圆角*/
+    border: 1px solid rgba(167,139,250,0.25);/*半透明紫色边框*/
+}
+.about-text h1{
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.about-text h1 span{
+    background: linear-gradient(135deg,#a78bfa,#f472b6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.about-text p{
+    color: #94a3b8;
+    margin-bottom: 16px;  /*段落之间的距离*/
+    font-size: 16px;
+}
+.skills-list{
+    list-style: none;  /*去掉默认的圆点*/
+    display: flex;
+    flex-wrap: wrap;/*空间不够时自动换行*/
+    gap:10px;    /*标签之间的间距*/
+    margin-top:24px;   /*和上方内容的距离*/
+}
+.skills-list li{
+    padding:6px 16px;
+    background-color: rgba(167,139,250,0.1);
+    border: 1px solid rgba(167,139,250,0.25);
+    border-radius: 20px;
+    font-size: 13px;
+    color: #a78bfa;
+}
+/*******************************************************************/
+/*联系页面*/
+.contact-section{
+    max-width: 700px;/*联系页面比其他页面窄 表单不需要太宽*/
+}
+.form-box{
+    background-color: #0d0d1f;
+    border: 1px solid rgba(167,139,250,0.25);
+    border-radius: 20;
+    padding: 40;
+}
+.form-group{
+    margin-bottom: 20px;  /*每个表单项之间的间距*/
+}
+.form-group label {
+    display: block;     /*变成块级:独占一行 输入框在下方*/
+    margin-bottom: 8px; /*label和输入框之间的距离*/
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 500;
+}
+/*用逗号同时选中三种输入元素 给它们相同的样式 避免重复写三遍。*/
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width: 100%;  /*撑满表单宽度*/
+    padding: 12px 16px;  /*内边距，让输入框有高度*/
+    background-color: #05050f;
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    border-radius: 8px;
+    color: #e2e8f0;
+    font-size: 15px;
+    outline: none; /*去掉浏览器默认的蓝色边框*/
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+/*focus是新伪类意思是:被点击选中时.比如用户点击输入框准备输入的时候*/
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #a78bfa;
+    /*外发光效果：不偏移 模糊0 扩散3px 淡紫色*/
+    box-shadow:  0 0 0 3px rgba(167, 139, 250, 0.15);
+}
+.form-group textarea {
+    resize: vertical;   /*只允许垂直方向拖动调整大小 不能横向拖*/
+    min-height: 120px;
+}
+.form-row {
+    display: flex;  /*让里面的表单项并排*/
+    gap: 16px;  /*两个输入框之间的间距*/
+}
+.form-row .form-group {  /*只选form-row里面的form-group*/
+    flex: 1;  /*两个输入框平分宽度*/
+}
+/*******************************************************************/
+/*滚动动画效果*/
+.fade-in{/*初始状态完全透明 用户看不到元素*/
+    opacity: 0; /*不透明度为0*/
+    transform: translateY(30px);/*初始状态向下偏移30px*/
+    transition: opacity 0.6s ease,transform 0.6 ease;
+    /*当opacity或transform变化时 用0.6s平滑过渡 ease是过渡的速度曲线——意思是“先快后慢”*/
+    /*linear:匀速*/
+    /*ease-in：先慢后快*/
+    /*ease-out：先快后慢*/
+    /*ease-in-out：两头慢中间快*/
+}
+.fade-in.visible{/*两个class（意思是既有fade-in又有visible的元素）同时存在时才会生效*/
+/*js滚动到该元素时会加上visible 触发这里的样式*/
+    opacity: 1;   /*元素显示出来*/
+    transform: translateY(0); /*回到原来的位置 不偏移*/
+}
+/*设置每张卡片出现的延迟事件*/
+.card:nth-child(1){
+    transition-delay: 0s;
+}
+.card:nth-child(2){
+    transition-delay: 0.2s;
+}
+.card:nth-child(3){
+    transition-delay: 0.4s;
+}
+/*********************************************************************************************/
+/*轮播*/
+.carousel-container {   /*轮播图容器*/
+    position: relative;  /*让内部absolute的子元素以它为参考*/
+    width: 90vw;   /*宽度占视口90%*/
+    max-width: 900px;  /*最大不超过900px*/
+    height: 450px;  /*固定高度*/
+    overflow: hidden;  /*超出部分裁切*/
+    border-radius: 16px;
+    border: 1px solid rgba(167, 139, 250, 0.25);
+}
+.carousel-img {  /*每张轮播图片*/
+    position: absolute;   /*绝对定位(子元素脱离了文档流)所有图片堆叠在同一位置*/
+    top: 0;  /*顶部对齐*/   /*就是告诉它贴在父容器（carousel-container）的左上角*/
+    left: 0; /*左侧对齐*/
+    width: 100%;  /*撑满容器宽*/
+    height: 100%;  /*撑满容器高*/
+    object-fit: cover; /*图片等比裁切填满 不留白边*/
+    opacity: 0;  /*默认透明（不可见）*/
+    transition: opacity 0.5s ease-in-out; /* 图片淡入淡出效果 */
+    /*opacity变化时有0.5秒的缓动动画*/
+}
+.carousel-img.active {
+    opacity: 1;
+}
+/* 按钮样式 */
+.carousel-btn {  /*按钮通用样式*/
+    position: absolute;
+    top: 50%;                      
+    transform: translateY(-50%);   /* top:50% + transform：translateY（-50%） 垂直居中的经典套路*/
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;   /*去掉边框样式*/
+    padding: 16px;  /*padding撑除按钮的大小*/
+    cursor: pointer; /*光标变换*/
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+.carousel-btn:hover {
+    background: rgba(167, 139, 250, 0.6);
+}
+.prev { 
+    left: 10px; 
+}
+.next { 
+    right: 10px; 
+}

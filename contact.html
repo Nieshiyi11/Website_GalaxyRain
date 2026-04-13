@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--***************************************************************************************************-->
+    <!--导航页面-->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">🌌Galaxy<span>Rain</span></a>
+        <div class="nav-links">
+            <a href="index.html" class="active">主页</a>
+            <a href="about.html">了解更多</a>
+            <a href="contact.html">联系我们</a>
+        </div>
+    </nav>
+<!--***************************************************************************************************-->
+    <!--联系管理员（表单）-->
+    <section class="section contact-section">
+        <div class="hero-badge">✦ 联系我们</div>
+        <!--样式写在标签里 临时覆盖css文件 适合一次特殊调整-->
+        <h1 class="section-title" style="font-size: 42px; margin-top: 16px;">联系<span class="gradient-text">银河中心</span></h1>
+        <p class="section-sub">有任何问题或建议，都可以给我们发送星际信号 🚀</p>
+        <div class="form-box">
+            <div class="form-row"><!--让用户和性别横向并排-->
+                <div class="form-group">
+                    <label>用户名</label>
+                    <input type="text" id="username" placeholder="星际代号username">
+                </div>
+                <div class="form-group">
+                    <label>性别</label>
+                    <select>
+                        <option value="">请选择</option>
+                        <option>男</option>
+                        <option>女</option>
+                        <option>保密</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>密码</label>
+                <input type="password" id="password" placeholder="password">
+            </div>
+            <div class="form-group">
+                <label>留言</label>
+                <textarea placeholder="说点什么吧。"></textarea> 
+            </div>
+            <button class="btn btn_01" id="submit-btn" style="width: 100%;padding: 14px;">发送星际信号</button> 
+        </div>
+    </section>
+<!--***************************************************************************************************-->
+    <!--页脚-->
+<footer class="footer">
+        <p>© 2026<span>GalaxyRain</span>· 用 ❤️ 和代码构建 · Follow Your Inner Voice</p>
+</footer>
+<script src="contact.js"></script>
+</body>
+</html>
